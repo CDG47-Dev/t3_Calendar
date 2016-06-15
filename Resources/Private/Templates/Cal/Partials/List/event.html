@@ -1,0 +1,39 @@
+<li class="vevent">
+  <div class="row">
+  <div class="col-xs-12 date">
+    <time datetime="{f:format.date(date:event.start.time.datetime, format:'d-m-Y')}">
+        <f:format.date format='d-m-Y'>{event.start.time}</f:format.date>
+     </time>
+  </div>
+   </div>
+     <div class="row">
+       <f:if condition="{event.images}">
+        <div class="col-xs-4 img">
+         <f:for each="{event.images}" as="image" iteration="itemIteration">
+           <f:if condition="{itemIteration.isFirst}">
+              <figure class="image"><f:image src="{image.uid}" alt="{image.originalResource.title}" width="{settings.view.event.event.image.maxW}" treatIdAsReference="1" /></figure>
+           </f:if>
+         </f:for>     
+       </div>
+       </f:if>
+       <div class="col-xs-{f:if(condition:event.images, else:'12', then:'8')}">
+             <h5>{event.title}</h5>
+       </div>
+     </div>
+  <f:if condition="{event.description}">
+    <div class="row">
+    <div class="col-xs-12 description">
+         <p><f:format.crop maxCharacters="50" append="&nbsp;[...]"><f:format.stripTags>{event.description}</f:format.stripTags></f:format.crop></p>
+    </div>
+     </div>
+  </f:if> 
+   <div class="row">
+    <div class="col-xs-12 readmore">
+       <p class="pull-right">
+               <f:link.page class="btn btn-link" pageUid="{settings.view.event.eventViewPid}"
+additionalParams="{tx_cal_controller: '{view: \'event\',type: event.type, uid: event.uid, year: event.start.year, month: event.start.month, day: event.start.day }'}">
+    + d'infos</f:link.page>
+       </p>
+    </div>
+  </div>
+ 
