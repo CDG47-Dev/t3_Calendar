@@ -1,0 +1,17 @@
+<div class="vevent">
+  <div class="row date">
+    <div class="col-md-12"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+       <time datetime="{f:format.date(date:event.start.time.datetime, format:'d-m-Y')}">
+          <f:format.date format='d-m-Y'>{event.start.time}</f:format.date>
+          <f:if condition="{event.allday} != 1">
+           &nbsp;&agrave;&nbsp;<f:format.date format='H:i'>{event.start.time}</f:format.date>
+          </f:if>
+        </time>
+     </div>
+  </div>
+  <div class="row event">
+   <div class="col-md-12">  
+      <f:render partial="Event/event" arguments="{event:event, settings:settings}" />
+    </div>
+  </div> 
+</div>
