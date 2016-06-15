@@ -1,0 +1,80 @@
+<h2>{event.title}</h2>
+<f:for each="{event.categories}" as="category" iteration="itemIteration">
+  <i>{category.title}</i>
+</f:for>
+<f:if condition="{event.images}">
+  <div class="img-event">
+     <div class="row">
+        <f:for each="{event.images}" as="image" iteration="itemIteration">
+          <f:render partial="Detail/MediaImage" arguments="{mediaElement: image}"/>
+        </f:for>
+      </div>
+</div>
+</f:if>
+<f:if condition="{event.images}">
+  <div class="row">
+    <div class="col-md-12 text"><f:format.html >{event.description}</f:format.html></div>
+  </div>
+</f:if>
+<h3>Informations</h3> 
+<f:if condition="{event.allday} != 1">
+  <f:then>
+    <f:if condition="{event.startdate} != {event.enddate}">
+      <f:then>
+        <p>Du <f:format.date format='{settings.view.event.event.dateFormat} {settings.view.event.event.timeFormat}'>@{event.start.time}</f:format.date> au <f:format.date format='{settings.view.event.event.dateFormat} {settings.view.event.event.timeFormat}'>@{event.end.time}</f:format.date></p>
+       </f:then>
+       <f:else>
+        <p>Le <f:format.date format='{settings.view.event.event.dateFormat} {settings.view.event.event.timeFormat}'>@{event.start.time}</f:format.date></p>
+      </f:else>
+    </f:if>
+  </f:then>
+  <f:else>
+    <f:if condition="{event.startdate} != {event.enddate}">
+      <f:then>
+        <p>Du <f:format.date format='{settings.view.event.event.dateFormat}'>@{event.start.time}</f:format.date> au  <f:format.date format='{settings.view.event.event.dateFormat}'>@{event.end.time}</f:format.date></p>
+      </f:then>
+      <f:else>
+        <p>Le <f:format.date format='{settings.view.event.event.dateFormat}'>@{event.start.time}</f:format.date></p>
+      </f:else>
+    </f:if>  
+  </f:else>
+</f:if>
+
+<f:if condition="{event.organizerObject}">
+  <f:then>
+    <h3><f:translate key="LLL:EXT:cal/Resources/Private/Language/locallang.xml:l_event_organizer" /></h3>
+    {event.organizerObject.name}
+  </f:then>
+  <f:else>
+    <f:if condition="{event.organizer} != ''">
+      <h3><f:translate key="LLL:EXT:cal/Resources/Private/Language/locallang.xml:l_event_organizer" /></h3>
+      {event.organizer}
+    </f:if>
+  </f:else>
+</f:if>
+<f:if condition="{event.locationObject}">
+  <f:then>
+    <h3><f:translate key="LLL:EXT:cal/Resources/Private/Language/locallang.xml:l_event_location" /></h3>
+    {event.locationObject.name}
+  </f:then>
+  <f:else>
+    <f:if condition="{event.location} != ''">
+      <h3><f:translate key="LLL:EXT:cal/Resources/Private/Language/locallang.xml:l_event_location" /></h3>
+      {event.location}
+    </f:if>
+  </f:else>
+</f:if>
+
+<f:if condition="{event.attachments}">
+  <h3>Informations Complèmentaires</h3>
+  <ul>
+  <f:for each="{event.attachments}" as="attachment" iteration="itemIteration">
+    <li><f:link.page pageUid="{attachment.originalFile.publicUrl}"> {attachment.originalFile.name} </f:link.page></li> 
+  </f:for>
+  </ul>
+</f:if>
+<f:if condition="{settings.view.ics.showIcsLinks} == 1">
+  <br /><f:link.page pageType="{settings.view.ics.typeNum}" additionalParams="{tx_cal_controller: '{view: \'event\',type: event.type, uid: event.uid, year: event.start.year, month: event.start.month, day: event.start.day  }'}" title="{f:translate(key:'LLL:EXT:cal/Resources/Private/Language/locallang.xml:l_event_icslink')}"><f:image src="{settings.view.imagePath}/ics.gif" /></f:link.page><br />
+</f:if>
+
+
