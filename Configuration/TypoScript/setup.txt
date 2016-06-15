@@ -1,0 +1,6 @@
+page = PAGE
+page {
+	includeJSFooterlibs {
+		ticker = EXT:t3_calendar/Resources/Public/Js/jquery.totemticker.min.js
+    }
+} 
