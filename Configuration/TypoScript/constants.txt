@@ -4,7 +4,7 @@
 page {
    calendar{
         # Script Calendrier
-        jsCalendar = EXT:t3_calendar/Resources/Public/Js/weather.js
+        jsCalendar = EXT:t3_calendar/Resources/Public/Js/calendar.js
         # CSS Calendrier
         cssCalendar = EXT:t3_calendar/Resources/Public/Less/calendar.less
    }
