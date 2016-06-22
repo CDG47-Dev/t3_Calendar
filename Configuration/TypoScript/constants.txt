@@ -1,3 +1,18 @@
+############
+### PAGE ###
+############
+page {
+   calendar{
+        # Script Calendrier
+        jsCalendrier = EXT:t3_calendar/Resources/Public/Js/weather.js
+        # CSS Calendrier
+        cssCalendrier = EXT:t3_calendar/Resources/Public/Less/calendar.less
+   }
+}
+
+################################
+### PLUGIN tx_cal_controller ###
+################################
 plugin.tx_cal_controller{
   view{
     event.eventTemplateFluid = EXT:t3_calendar/Resources/Private/Templates/Cal/event.html
