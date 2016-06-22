@@ -1,16 +1,4 @@
 {namespace cal=Tx_Cal_ViewHelpers}
-  <script type="text/javascript">
-    $(function(){
-      $('#vertical-ticker').totemticker({
-        row_height  :  '100px',
-        next    :  '#ticker-next',
-        previous  :  '#ticker-previous',
-        stop    :  '#stop',
-        start    :  '#start',
-        mousestop  :  true,
-      });
-    });
-  </script>
 <div class="panel panel-events">
   <div class="panel-heading">L'agenda du <f:format.date format="d/m/y">{listView.starttime.time}</f:format.date> au <f:format.date format="d/m/y">{listView.endtime.time}</f:format.date></div>
   <div class="panel-body">
