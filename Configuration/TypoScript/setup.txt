@@ -2,5 +2,10 @@ page = PAGE
 page {
 	includeJSFooterlibs {
 		ticker = EXT:t3_calendar/Resources/Public/Js/jquery.totemticker.min.js
-    }
+        }
+	includeCSS {
+		calendar = EXT:t3_calendar/Resources/Public/Less/calendar.less
+		calendar.title = CSS
+		calendar
+        }
 } 
