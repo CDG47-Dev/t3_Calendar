@@ -1,2 +1,6 @@
-plugin.tx_cal_controller.view.event.eventTemplateFluid = EXT:t3_calendar/Resources/Private/Templates/Cal/event.html
-plugin.tx_cal_controller.view.list.listTemplateFluid = EXT:t3_calendar/Resources/Private/Templates/Cal/list.html
+plugin.tx_cal_controller{
+  view{
+    event.eventTemplateFluid = EXT:t3_calendar/Resources/Private/Templates/Cal/event.html
+    list.listTemplateFluid = EXT:t3_calendar/Resources/Private/Templates/Cal/list.html
+  }
+}
