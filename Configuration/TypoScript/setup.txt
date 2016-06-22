@@ -7,6 +7,6 @@ page {
 	includeCSS {
 		calendar = {$page.calendar.cssCalendar}
 		calendar.title = CSS
-		calendar
+		calendar.media = all 
         }
 } 
