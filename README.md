@@ -10,14 +10,14 @@
 ## Usage
 Pour activer les vues Fluid
 
-*Dans le setup d'un gabarit
+* Dans le setup d'un gabarit
 ```
 plugin.tx_cal_controller {
     activateFluid = 1
 }
 ```
 
-*ou dans l'onglet Typoscript du plugin dans la zone de texte "plugin.tx_cal_controller: ":
+* ou dans l'onglet Typoscript du plugin dans la zone de texte "plugin.tx_cal_controller: ":
 ```
 activateFluid = 1
 ```
