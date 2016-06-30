@@ -1,6 +1,6 @@
     $(function(){
       $('#vertical-ticker').totemticker({
-        row_height  :  '100px',
+        row_height  :  '250px',
         next    :  '#ticker-next',
         previous  :  '#ticker-previous',
         stop    :  '#stop',
