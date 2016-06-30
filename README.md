@@ -1,9 +1,9 @@
 # t3_Calendar
 
-#Minimal Dependencies
+## Minimal Dependencies
 * TYPO3 CMS 7.6 or greater
 
-#Infos 
+## Infos 
 * Inclu la librairie javascript [Totem jquery plugin](http://buildinternet.com/project/totem/)
 
 
@@ -23,3 +23,6 @@ activateFluid = 1
 ```
 
 *Ne pas oublier d'inclure l'extension dans le gabarit*
+
+## Examples
+[Vertical Ticker](https://github.com/CDG47-Dev/t3_Calendar/blob/master/Examples/vertical_ticker.png)
