@@ -1,5 +1,5 @@
     $(function(){
-      $('#vertical-ticker').totemticker({
+      $('div[id^="vertical-ticker-"').totemticker({
         row_height  :  '250px',
         next    :  '#ticker-next',
         previous  :  '#ticker-previous',

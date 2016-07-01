@@ -13,7 +13,7 @@
   <f:if condition="{listView.master_array}">
     <f:then>
       <div class="row">
-      <ul id="vertical-ticker" class="scroll col-md-12" style="overflow: hidden;">
+      <ul id="vertical-ticker-{contentObjectData.uid}" class="scroll col-md-12" style="overflow: hidden;">
         <f:for each="{listView.master_array}" as="entriesOfADay" key="day">
           <f:if
             condition="{day} >= {f:format.date(format:'Ymd' date:'@{listView.starttime.time}')}">
